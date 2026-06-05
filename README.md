@@ -15,6 +15,10 @@ Pipeline adaptativo baseado em 4 fases (**Especificar → Design → Tarefas →
 Guia metódico para decifrar bases de código complexas ou sem documentação, traçando investigações cirúrgicas e alimentando bases de conhecimento persistentes (`.notebook/`) de forma colaborativa com o desenvolvedor.
 - **Triggers:** "corrija isso", "como isso funciona", "investigue este fluxo", "ajude-me com este código".
 
+### 3. 📐 [System Design (Arquitetura de Sistemas)](file:///Users/andrelemos/.gemini/config/skills/system-design/SKILL.md)
+Framework completo para estruturar e desenhar a arquitetura de sistemas distribuídos, fornecendo guias para definição de escopo (FR/NFR), estimativas de capacidade, listagem de componentes AWS e geração de fluxogramas interativos.
+- **Triggers:** "desenho de arquitetura de system design", "projetar um sistema", "requisitos funcionais", "NFR", "SPOF", "trade-off", "diagrama de caixas e setas".
+
 ---
 
 ## ⚙️ Instalação e Compatibilidade
@@ -26,6 +30,7 @@ Para instalar localmente as skills no seu ambiente CLI:
 ```bash
 npx agent-skills install -s spec-driven
 npx agent-skills install -s codebase-navigator
+npx agent-skills install -s system-design
 ```
 
 ### 🤖 No Devin (Cognition)
