@@ -2,7 +2,7 @@
 name: system-design
 description: >
   Framework completo para conduzir e estruturar desenhos de System Design, incluindo
-  geração de diagramas Flowchart (caixas e setas) como artifact React interativo. Use esta skill
+  geração de diagramas Flowchart (caixas e setas) como Mermaid Flowchart. Use esta skill
   sempre que o usuário mencionar desenho de arquitetura de system design, quiser praticar ou
   simular o desenho de arquitetura de sistemas, pedir ajuda para desenhar ou projetar
   um sistema distribuído, quiser entender como projetar um sistema
@@ -210,12 +210,12 @@ O diagrama é organizado em **camadas da esquerda para direita**, cada uma com u
 Para cada FR do Passo 1, aponte no diagrama qual caixa o satisfaz:
 > *"O requisito de leitura do feed é atendido pelo Feed API buscando do Redis. O requisito de publicar passa pelo Post API → Kafka → Fan-out Worker."*
 
-### Geração do Diagrama como Artifact React
-Ao gerar o diagrama, sempre criar como **artifact React interativo** com:
-- Caixas coloridas por camada (cores distintas por grupo)
-- Setas com label do protocolo
-- Clique na caixa → destaca conexões daquele componente + exibe painel com detalhes técnicos
-- Layout responsivo com scroll horizontal se necessário
+### Geração do Diagrama como Mermaid Flowchart
+Ao gerar o diagrama, sempre criar como um bloco de código `mermaid` no Markdown do artefato com:
+- Organização em subgraphs para cada camada (Atores, API Layer, Processing, Data Layer)
+- Estilos de cores customizados para diferenciar as camadas (usando `style` ou `classDef` do Mermaid)
+- Setas com labels indicando o protocolo/canal (ex: HTTPS, gRPC, Redis TCP, SQL)
+- Direção clara do fluxo de dados (geralmente da esquerda para a direita `LR` ou de cima para baixo `TB`)
 
 ### Defina também
 - Principais **endpoints** (ex: `POST /posts`, `GET /feed/{userId}`)
@@ -325,7 +325,7 @@ Ao gerar o diagrama, sempre criar como **artifact React interativo** com:
 - Espera o usuário descrever. Faz perguntas de aprofundamento se faltar componentes importantes.
 - Depois pede: *"Quais APIs principais você exporia? Me dê os endpoints."*
 - Depois pede: *"Qual seria o data model principal?"*
-- Ao final: Claude **gera o Flowchart React interativo** com base nas respostas do usuário (notar que o fluxograma deve refletir o que foi acordado).
+- Ao final: Claude **gera o Mermaid Flowchart** com base nas respostas do usuário (notar que o fluxograma deve refletir o que foi acordado).
 
 **Passo 3 — Aprofundamento**
 - Claude escolhe **o gargalo mais crítico** do design descrito e pergunta: *"Onde você acha que esse sistema vai falhar sob carga?"*
