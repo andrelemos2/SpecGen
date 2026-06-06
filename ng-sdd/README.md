@@ -1,68 +1,58 @@
-# Next Gen Spec-Driven Development (ng-sdd)
+# Next Gen Spec-Driven Development (ng-sdd) v2.1
 
 ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
-![Version](https://img.shields.io/badge/Version-1.0.0-000000?style=for-the-badge&logo=semver&logoColor=white)
+![Version](https://img.shields.io/badge/Version-2.1.0-000000?style=for-the-badge&logo=semver&logoColor=white)
 ![Type](https://img.shields.io/badge/Type-Agent_Skill-8A2BE2?style=for-the-badge&logo=openai&logoColor=white)
-![Tokens](https://img.shields.io/badge/Contexto-Economia_Extrema-FF8C00?style=for-the-badge&logo=dependabot&logoColor=white)
-![Compatibility](https://img.shields.io/badge/Agentes-Antigravity_%7C_Devin_%7C_Cursor-007EC6?style=for-the-badge&logo=probot&logoColor=white)
 ![Author](https://img.shields.io/badge/Author-André_Lemos-181717?style=for-the-badge&logo=github&logoColor=white)
-![License](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey?style=for-the-badge&logo=creativecommons&logoColor=black)
 
-**ng-sdd** é um framework definitivo de governança, paralelismo e execução cirúrgica para Agentes de Inteligência Artificial. Projetado para máxima economia de tokens e precisão, ele transforma o modelo tradicional de "documentação passiva" em um fluxo de trabalho governado por **Slash Commands** e **Gestão Dinâmica de Contexto**.
+**ng-sdd v2.1** é um framework enterprise de Spec-Driven Development para Agentes de Inteligência Artificial. Projetado para grandes equipes, projetos complexos e fluxos Greenfield/Brownfield, ele utiliza uma **Arquitetura Modular** com Lazy Loading de contexto, integração completa com **GitFlow** e um pipeline de **Fases Gated** para eliminar alucinações, *scope creep* e conflitos de merge.
 
-## 🚀 Como Funciona
+## 🚀 Como Funciona (Pipeline Gated)
 
-Ao contrário de frameworks que exigem a leitura de pesadas bases de conhecimento a cada iteração, o **ng-sdd** é magro, focado na ação. Ele opera exclusivamente através de gatilhos:
+Ao contrário de frameworks monolíticos, o ng-sdd v2.1 é dividido em múltiplos arquivos que são carregados via **Lazy Loading** pelo agente, poupando tokens e mantendo o contexto limpo.
 
-*   `/ngsdd:init`: Inicializa o repositório, mapeia a arquitetura e gera a constituição do projeto.
-*   `/ngsdd:propose [feature]`: Aplica questionamento socrático para remover ambiguidades e estrutura o escopo (`spec.md`, `design.md`, `tasks.md`).
-*   `/ngsdd:pause`: Empacota a memória e orienta o usuário a fechar o chat, salvando contexto e economizando tokens.
-*   `/ngsdd:apply`: Aciona o pipeline de execução paralela (se aplicável), utilizando TDD estrito (Red-Green-Refactor).
-*   `/ngsdd:archive`: Executa o Quality Gate final e higieniza o workspace movendo tudo para um arquivo histórico.
+O pipeline possui 7 fases acionadas via Slash Commands:
 
-Toda a memória é mantida dinamicamente no seu próprio projeto (dentro da pasta `.ngsdd/memory/`), o que garante que o LLM só leia aquilo que é estritamente relevante para o código atual.
+*   `/ngsdd:init` — **Fundação:** Detecta Greenfield vs Brownfield, estrutura o PRD, cria o `CONSTITUTION.md` e inicializa o repositório.
+*   `/ngsdd:research` — **Elicitação e Contexto:** Identifica context debt, blast radius e contratos implícitos com questionamento socrático.
+*   `/ngsdd:specify` — **Source of Truth:** Cria a especificação com User Stories, BDD, RFs e RNFs e inicia a branch no GitFlow.
+*   `/ngsdd:design` — **Arquitetura e Contratos:** Usa Mermaid obrigatório (arquitetura, sequência, ER, lazy loading boundaries) e define o contrato de mudança no `delta.md`.
+*   `/ngsdd:tasks` — **Decomposição:** Quebra em tarefas atômicas (2-5 min), organizadas em grupos PARALELOS e SEQUENCIAIS com matriz de sub-agentes.
+*   `/ngsdd:execute` — **Implementação Cirúrgica:** Força TDD estrito (Red-Green-Refactor) e commits atômicos (Conventional Commits).
+*   `/ngsdd:archive` — **Quality Gate:** Executa validação final contra a spec e o delta, fecha a feature no GitFlow e higieniza o workspace.
 
----
+## ⚡ Modo Adaptativo
 
-## 🆚 Comparativo com Outros Frameworks (A Evolução)
+A skill detecta a complexidade da tarefa no início e seleciona o melhor caminho, evitando burocracia desnecessária:
 
-A **ng-sdd** foi arquitetada com o objetivo de integrar as melhores práticas estabelecidas por seus precursores, otimizando as áreas que tradicionalmente geram maior custo computacional ou complexidade operacional:
+*   **Full Path:** Para features complexas (> 3 arquivos, novas integrações). Executa as 7 fases completas.
+*   **Quick Path:** Para hotfixes e tarefas simples (≤ 3 arquivos). Pula Research, Design e Tasks, indo direto para `INIT → SPECIFY → EXECUTE → ARCHIVE`.
 
-| Framework Precursor | Principais Contribuições Absorvidas | Oportunidades de Otimização Abordadas |
-| :--- | :--- | :--- |
-| **GitHub Spec Kit** | **Governança forte** e uso de princípios estruturados (`constitution.md`). | Redução da verbosidade e substituição de arquivos estáticos extensos para poupar o limite de contexto do LLM. |
-| **Superpowers** | **Rigor na execução**, isolamento de ambiente e adoção do TDD estrito (Red-Green-Refactor). | Substituição de fluxos puramente lineares por arquiteturas de execução mais eficientes e de menor custo de tokens. |
-| **TLC Spec-Driven** | **Paralelismo de sub-agentes** via `tasks.md` e a memória de projeto persistente (`STATE.md`). | Consolidação da documentação de referência, simplificando a multiplicidade de arquivos isolados de instrução. |
-| **OpenSpec** | **Fluidez de interação** no terminal via Slash Commands e organização estruturada de pastas (arquivamento). | Incorporação de um modelo de governança de código robusto, ausente em modelos focados apenas em interface. |
+## 🗂️ Arquitetura Modular (Zero Conflitos)
 
-**Veredito:** O **ng-sdd** integra a sólida governança do Spec Kit, o alto rigor de qualidade do Superpowers, a orquestração paralela do TLC e a interface ágil do OpenSpec. Essa união é viabilizada com extrema eficiência de recursos (tokens), substituindo modelos densos de referência por interações enxutas e contextuais.
+Para evitar conflitos de merge em times grandes, a skill foi fragmentada:
 
----
+*   `SKILL.md`: Entry point roteador magro (< 80 linhas).
+*   `phases/`: 7 arquivos independentes (ownership isolado por papel).
+*   `templates/`: Modelos prontos para o agente copiar (PRD, spec, design, delta, tasks, quality-gate).
+*   `workflows/gitflow.md`: Integração e comandos mapeados com GitFlow.
+*   `principles.md`: Os 10 princípios imutáveis do framework (ownership do Tech Lead).
 
-## 📉 Economia de Tokens (Context Economy)
+## 🌳 Integração com GitFlow
 
-O maior diferencial da **ng-sdd** na prática do dia a dia é o impacto financeiro e de performance no consumo de contexto do LLM. Como a skill não carrega arquivos passivos de documentação, a diferença no uso de tokens é drástica:
+O framework trabalha em sincronia perfeita com o GitFlow, ditando como o código evolui:
 
-*   **Modelos Tradicionais (ex: TLC, Spec Kit, Superpowers):** O agente carrega a skill juntamente com grandes arquivos de referência e exemplos para entender como operar. Isso resulta frequentemente em **~5.000 a 15.000 tokens** gastos apenas de "overhead" na inicialização do prompt, encarecendo a operação, aumentando a latência e poluindo a janela de atenção do modelo.
-*   **ng-sdd:** O agente carrega apenas as diretrizes enxutas do `SKILL.md` (baseadas em Slash Commands determinísticos) e busca os artefatos locais contextuais (como o `STATE.md`). O overhead base despenca para **menos de 1.000 tokens**. Isso garante que a janela de contexto seja usada para pensar quase inteiramente no seu **código** e na **arquitetura**, gerando execuções mais baratas, rápidas e menos propensas a alucinações.
+| Ação ng-sdd | Equivalente no GitFlow |
+| :--- | :--- |
+| `/ngsdd:specify` (nova feature) | `git flow feature start FEAT-NNN-slug` |
+| `/ngsdd:execute` | Trabalho focado e commits em `feature/FEAT-NNN-slug` |
+| `/ngsdd:archive` | `git flow feature finish` (merge em `develop`) |
+| Hotfix (Quick Path) | `git flow hotfix start/finish` (merge em `main` + `develop`) |
 
----
-
-## 🤖 Compatibilidade com Ferramentas e Agentes de IA
+## 🤖 Compatibilidade
 
 A definição agnóstica do **ng-sdd** permite sua execução transparente nos principais orquestradores e IDEs focados em IA:
 
-### 🪐 Antigravity (Gemini)
-A ferramenta pode ser invocada naturalmente no terminal ou orquestrada com o comando padrão. Os sub-agentes serão gerenciados automaticamente pelo Antigravity em rotinas paralelas quando detectado pelo arquivo `tasks.md`.
-
-### 🤖 Devin (Cognition)
-Para usar no Devin, copie toda a pasta `ng-sdd/` (contendo o `SKILL.md`) para o diretório `.agents/skills/` na raiz do seu repositório de trabalho. O Devin fará o carregamento imediato em sua lista de **Skills Discovered**, aplicando automaticamente as regras e lendo os Slash Commands no chat.
-
-### 📝 Cursor / Windsurf
-A melhor abordagem para estas IDEs é referenciar a skill em suas regras de projeto. Você pode anexar o conteúdo do `SKILL.md` ou criar uma referência dentro do arquivo `.cursorrules` ou do prompt de projeto no Windsurf:
-```text
-Sempre que for solicitado criar código ou iterar sobre ele, siga o framework ng-sdd. O usuário ativará os fluxos usando /ngsdd:init, /ngsdd:propose, etc...
-```
-
-### 💻 Claude Code / Outras CLIs
-No uso via terminal com Claude Code, basta incluir o arquivo `SKILL.md` como contexto ao iniciar o projeto (`cat SKILL.md | claude ...`) ou criar o seu alias de prompt customizado contendo as instruções principais, usando o chat para dar trigger nos slash commands diretamente.
+*   **Antigravity (Gemini):** Invocação natural no terminal. Sub-agentes são orquestrados nativamente.
+*   **Devin / Windsurf / Cursor:** Anexar a estrutura na configuração de regras (`.cursorrules` ou similar) mapeando o entry point para o `SKILL.md`.
+*   **Claude Code:** Inclua o `SKILL.md` como contexto inicial para que o roteamento dinâmico guie a execução.

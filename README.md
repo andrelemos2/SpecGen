@@ -6,9 +6,9 @@ Este repositório reúne um conjunto de **skills estruturadas** para otimizar o 
 
 ## 📁 Skills Disponíveis
 
-### 1. ⚡ [Next Gen Spec-Driven Development (ng-sdd)](file:///Users/andrelemos/.gemini/config/skills/ng-sdd/README.md)
-O framework definitivo de governança, paralelismo e execução cirúrgica. Evolução máxima de frameworks baseados em especificação, com foco absoluto em economia de tokens (<1000 tokens de overhead) e "Zero Alucinação" através de um fluxo operado puramente por Slash Commands.
-- **Triggers:** `/ngsdd:init`, `/ngsdd:propose`, `/ngsdd:apply`, `/ngsdd:pause`, `/ngsdd:archive`.
+### 1. 📐 [Next Gen Spec-Driven Development (ng-sdd)](file:///Users/andrelemos/.gemini/config/skills/ng-sdd/SKILL.md)
+Framework enterprise de Spec-Driven Development (v2.1). Arquitetura modular com *lazy loading* de fases (15 arquivos estruturados), pipeline de 7 fases gated e **integração nativa com GitFlow**. Suporte a PRD, Greenfield/Brownfield, diagramas Mermaid, TDD, sub-agentes paralelos e **modo adaptativo** (Quick Path vs Full Path).
+- **Triggers:** `/ngsdd:init`, `/ngsdd:research`, `/ngsdd:specify`, `/ngsdd:design`, `/ngsdd:tasks`, `/ngsdd:execute`, `/ngsdd:archive`, `/ngsdd:status`.
 
 ### 2. 📐 [System Design (Arquitetura de Sistemas)](file:///Users/andrelemos/.gemini/config/skills/system-design/SKILL.md)
 Framework completo para estruturar e desenhar a arquitetura de sistemas distribuídos, fornecendo guias para definição de escopo (FR/NFR), estimativas de capacidade, listagem de componentes AWS e geração de fluxogramas interativos.
