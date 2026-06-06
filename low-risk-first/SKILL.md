@@ -1,5 +1,5 @@
 ---
-name: low-risk-questions
+name: low-risk-first
 description: >
   Avalia desenhos de solução (draw.io) sob 5 pilares de risco para antecipar
   questionamentos de Staff Engineers (L1, L2, L3). Funciona como um gate de
@@ -14,7 +14,7 @@ description: >
   submeter um diagrama de arquitetura para avaliação de risco.
 ---
 
-# Low-Risk Questions — Avaliação de Risco em Desenhos de Solução
+# Low-Risk First — Avaliação de Risco em Desenhos de Solução
 
 ## Objetivo
 
@@ -79,11 +79,11 @@ Cada pilar é avaliado de forma independente com um **score de 1 a 5** e um conj
 
 | # | Pilar | Foco Principal | Referência |
 |---|---|---|---|
-| 1 | **Aplicação** | Resiliência, fallbacks, circuit breakers, SPOFs, degradação graciosa | [pilar-aplicacao.md](file:///Users/andrelemos/.gemini/config/skills/low-risk-questions/references/pilar-aplicacao.md) |
-| 2 | **Testes** | Testes sintéticos de carga fria, contrato, chaos engineering | [pilar-testes.md](file:///Users/andrelemos/.gemini/config/skills/low-risk-questions/references/pilar-testes.md) |
-| 3 | **Observabilidade** | Métricas por versão, tracing distribuído, dashboards de rollout | [pilar-observabilidade.md](file:///Users/andrelemos/.gemini/config/skills/low-risk-questions/references/pilar-observabilidade.md) |
-| 4 | **Estratégia de Implantação** | Canary, blue/green, feature flags, blast radius controlado | [pilar-implantacao.md](file:///Users/andrelemos/.gemini/config/skills/low-risk-questions/references/pilar-implantacao.md) |
-| 5 | **Dados** | Migração de schema, backward/forward compatibility, rollback de dados | [pilar-dados.md](file:///Users/andrelemos/.gemini/config/skills/low-risk-questions/references/pilar-dados.md) |
+| 1 | **Aplicação** | Resiliência, fallbacks, circuit breakers, SPOFs, degradação graciosa | [pilar-aplicacao.md](file:///Users/andrelemos/.gemini/config/skills/low-risk-first/references/pilar-aplicacao.md) |
+| 2 | **Testes** | Testes sintéticos de carga fria, contrato, chaos engineering | [pilar-testes.md](file:///Users/andrelemos/.gemini/config/skills/low-risk-first/references/pilar-testes.md) |
+| 3 | **Observabilidade** | Métricas por versão, tracing distribuído, dashboards de rollout | [pilar-observabilidade.md](file:///Users/andrelemos/.gemini/config/skills/low-risk-first/references/pilar-observabilidade.md) |
+| 4 | **Estratégia de Implantação** | Canary, blue/green, feature flags, blast radius controlado | [pilar-implantacao.md](file:///Users/andrelemos/.gemini/config/skills/low-risk-first/references/pilar-implantacao.md) |
+| 5 | **Dados** | Migração de schema, backward/forward compatibility, rollback de dados | [pilar-dados.md](file:///Users/andrelemos/.gemini/config/skills/low-risk-first/references/pilar-dados.md) |
 
 ### Escala de Scoring
 
@@ -251,8 +251,8 @@ Os níveis determinam a **profundidade e foco** das perguntas geradas:
 
 ## Referências Detalhadas
 
-- [Pilar 1 — Aplicação](file:///Users/andrelemos/.gemini/config/skills/low-risk-questions/references/pilar-aplicacao.md) — Resiliência, fallbacks, circuit breakers, SPOFs
-- [Pilar 2 — Testes](file:///Users/andrelemos/.gemini/config/skills/low-risk-questions/references/pilar-testes.md) — Testes sintéticos, carga fria, chaos engineering
-- [Pilar 3 — Observabilidade](file:///Users/andrelemos/.gemini/config/skills/low-risk-questions/references/pilar-observabilidade.md) — Métricas por versão, tracing, dashboards de rollout
-- [Pilar 4 — Estratégia de Implantação](file:///Users/andrelemos/.gemini/config/skills/low-risk-questions/references/pilar-implantacao.md) — Canary, blue/green, blast radius, SLOs
-- [Pilar 5 — Dados](file:///Users/andrelemos/.gemini/config/skills/low-risk-questions/references/pilar-dados.md) — Migração de schema, compatibilidade, rollback de dados
+- [Pilar 1 — Aplicação](file:///Users/andrelemos/.gemini/config/skills/low-risk-first/references/pilar-aplicacao.md) — Resiliência, fallbacks, circuit breakers, SPOFs
+- [Pilar 2 — Testes](file:///Users/andrelemos/.gemini/config/skills/low-risk-first/references/pilar-testes.md) — Testes sintéticos, carga fria, chaos engineering
+- [Pilar 3 — Observabilidade](file:///Users/andrelemos/.gemini/config/skills/low-risk-first/references/pilar-observabilidade.md) — Métricas por versão, tracing, dashboards de rollout
+- [Pilar 4 — Estratégia de Implantação](file:///Users/andrelemos/.gemini/config/skills/low-risk-first/references/pilar-implantacao.md) — Canary, blue/green, blast radius, SLOs
+- [Pilar 5 — Dados](file:///Users/andrelemos/.gemini/config/skills/low-risk-first/references/pilar-dados.md) — Migração de schema, compatibilidade, rollback de dados

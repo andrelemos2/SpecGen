@@ -14,9 +14,13 @@ O framework definitivo de governança, paralelismo e execução cirúrgica. Evol
 Framework completo para estruturar e desenhar a arquitetura de sistemas distribuídos, fornecendo guias para definição de escopo (FR/NFR), estimativas de capacidade, listagem de componentes AWS e geração de fluxogramas interativos.
 - **Triggers:** "desenho de arquitetura de system design", "projetar um sistema", "requisitos funcionais", "NFR", "SPOF", "trade-off", "diagrama de caixas e setas".
 
-### 3. 🛡️ [Low Risk Questions](file:///Users/andrelemos/.gemini/config/skills/low-risk-questions/SKILL.md)
+### 3. 🛡️ [Low Risk First](file:///Users/andrelemos/.gemini/config/skills/low-risk-first/SKILL.md)
 Avalia desenhos de solução (draw.io) sob 5 pilares de risco para antecipar questionamentos de Staff Engineers. Funciona como um gate de aprovação pré-review que identifica gaps em Aplicação, Testes, Observabilidade, Estratégia de Implantação e Dados.
 - **Triggers:** "avaliação de risco", "review de desenho de solução", "blast radius", "rollout seguro", "canary deployment", "checklist de deploy".
+
+### 4. 🧪 [Create Synthetic Tests](file:///Users/andrelemos/.gemini/config/skills/create-synthetic-tests/SKILL.md)
+Framework para criação de testes sintéticos via AWS Lambda executados durante os lifecycle hooks do AWS CodeDeploy (ex: AfterAllowTestTraffic). Realiza varredura e iteração em diretório de cenários para validar a aplicação antes do roteamento de tráfego.
+- **Triggers:** "criar teste sintético", "codedeploy hook", "AfterAllowTestTraffic lambda", "testes de cenário aws", "lambda sintético".
 
 ---
 
