@@ -33,21 +33,15 @@ Leia os artefatos aprovados na ordem:
 
 ---
 
-## Passo 1 — Executar grupos em ordem
+## Passo 1 — Delegação para o Subagente (Orquestração)
 
-### Grupo PARALELO
-Execute tarefas do Grupo 1 simultaneamente (sub-agentes se disponível):
+**Orquestrador:** NÃO escreva o código manualmente no chat principal. Sua função é delegar as tarefas do `tasks.md` para a skill de subagente especializada (ex: `/ng-sdd-execute` com `model: swe`). 
 
-```
-Sub-agente Backend  → TASK-001 (service)
-Sub-agente QA       → TASK-002 (testes RED)
-Sub-agente Infra    → TASK-003 (migration)
-```
+Para cada tarefa (ou grupo de tarefas), invoque o subagente passando as instruções do que deve ser feito (incluindo o caminho da Spec e do Delta).
+- **Sub-agentes Paralelos:** Se a plataforma permitir, invoque múltiplos subagentes simultaneamente para tarefas que não dependem uma da outra.
+- **Acompanhamento:** Após despachar as tarefas para o(s) subagente(s), aguarde a conclusão deles antes de prosseguir.
 
-Aguarde **todos** do Grupo PARALELO concluírem antes de iniciar o SEQUENCIAL.
-
-### Grupo SEQUENCIAL
-Execute na ordem definida em `tasks.md`, verificando dependências.
+O subagente acionado é quem deverá seguir os passos de TDD (RED-GREEN-REFACTOR) rigorosamente.
 
 ---
 

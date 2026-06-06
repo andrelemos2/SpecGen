@@ -1,25 +1,60 @@
-# Next Gen Spec-Driven Development (ng-sdd) v2.1
+# Next Gen Spec-Driven Development (ng-sdd) v2.2
 
 ![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
-![Version](https://img.shields.io/badge/Version-2.1.0-000000?style=for-the-badge&logo=semver&logoColor=white)
+![Version](https://img.shields.io/badge/Version-2.2.0-000000?style=for-the-badge&logo=semver&logoColor=white)
 ![Type](https://img.shields.io/badge/Type-Agent_Skill-8A2BE2?style=for-the-badge&logo=openai&logoColor=white)
 ![Author](https://img.shields.io/badge/Author-André_Lemos-181717?style=for-the-badge&logo=github&logoColor=white)
 
-**ng-sdd v2.1** é um framework enterprise de Spec-Driven Development para Agentes de Inteligência Artificial. Projetado para grandes equipes, projetos complexos e fluxos Greenfield/Brownfield, ele utiliza uma **Arquitetura Modular** com Lazy Loading de contexto, integração completa com **GitFlow** e um pipeline de **Fases Gated** para eliminar alucinações, *scope creep* e conflitos de merge.
+**ng-sdd v2.2** é um framework enterprise de Spec-Driven Development para Agentes de Inteligência Artificial. Projetado para grandes equipes, projetos complexos e fluxos Greenfield/Brownfield, ele utiliza uma **Arquitetura Modular** com Lazy Loading de contexto, integração completa com **GitFlow** e um pipeline de **Fases Gated** para eliminar alucinações, *scope creep* e conflitos de merge.
 
-## 🚀 Como Funciona (Pipeline Gated)
+## 🚀 Como Funciona (Pipeline Gated e Orquestração)
 
-Ao contrário de frameworks monolíticos, o ng-sdd v2.1 é dividido em múltiplos arquivos que são carregados via **Lazy Loading** pelo agente, poupando tokens e mantendo o contexto limpo.
+Ao contrário de frameworks monolíticos, o ng-sdd v2.2 é dividido em múltiplos arquivos que são carregados via **Lazy Loading** pelo agente, poupando tokens e mantendo o contexto limpo. Além disso, ele age como um **Orquestrador**, separando tarefas de interação humana das tarefas pesadas delegadas para **Subagentes**.
 
-O pipeline possui 7 fases acionadas via Slash Commands:
+O pipeline possui 7 fases acionadas via Custom Commands:
 
 *   `/ngsdd:init` — **Fundação:** Detecta Greenfield vs Brownfield, estrutura o PRD, cria o `CONSTITUTION.md` e inicializa o repositório.
-*   `/ngsdd:research` — **Elicitação e Contexto:** Identifica context debt, blast radius e contratos implícitos com questionamento socrático.
+*   `/ngsdd:research` — **Elicitação e Contexto (Delegado):** Identifica context debt, blast radius e contratos implícitos com questionamento socrático, *delegando a varredura pesada de código para o subagente `ng-sdd-research`*.
 *   `/ngsdd:specify` — **Source of Truth:** Cria a especificação com User Stories, BDD, RFs e RNFs e inicia a branch no GitFlow.
 *   `/ngsdd:design` — **Arquitetura e Contratos:** Usa Mermaid obrigatório (arquitetura, sequência, ER, lazy loading boundaries) e define o contrato de mudança no `delta.md`.
 *   `/ngsdd:tasks` — **Decomposição:** Quebra em tarefas atômicas (2-5 min), organizadas em grupos PARALELOS e SEQUENCIAIS com matriz de sub-agentes.
-*   `/ngsdd:execute` — **Implementação Cirúrgica:** Força TDD estrito (Red-Green-Refactor) e commits atômicos (Conventional Commits).
+*   `/ngsdd:execute` — **Implementação Cirúrgica (Delegado):** Força TDD estrito e commits atômicos, *delegando a execução de cada task para o subagente `ng-sdd-execute`*, enquanto o orquestrador acompanha o progresso.
 *   `/ngsdd:archive` — **Quality Gate:** Executa validação final contra a spec e o delta, fecha a feature no GitFlow e higieniza o workspace.
+
+## 🤝 Modelo de Orquestração e Subagentes
+
+Para otimizar o uso do contexto e manter a conversa principal limpa de logs de execução e comandos repetitivos de busca, o **ng-sdd v2.2** separa o fluxo em papéis:
+
+1. **Orquestrador Principal (Inline):** Executado diretamente na janela de chat com o usuário. É o "Cérebro" do projeto, responsável por alinhar expectativas com o usuário, obter aprovações nos Gates (PRD, Spec, Design) e definir a estratégia.
+2. **Subagentes Operacionais (Background Workers):** Executados de forma autocontida e assíncrona. Recebem tarefas específicas e detalhadas, executam-nas no repositório e devolvem apenas o relatório final para o Orquestrador.
+
+### Fluxograma de Orquestração (Flowchart)
+
+```mermaid
+flowchart TD
+    User([👤 Usuário]) <-->|Interação, Alinhamento e Gates| Orchestrator[🧠 Orquestrador: ng-sdd inline]
+    
+    %% Fase de Research
+    Orchestrator -->|1. Invocação de Subagente| ResearchAgent[🔍 Subagente: ng-sdd-research]
+    ResearchAgent -->|"2. Varredura Exaustiva (grep, glob)"| Repo[("💻 Repositório")]
+    ResearchAgent -->|3. Relatório de Blast & Context Debt| Orchestrator
+    
+    %% Fase de Execução
+    Orchestrator -->|4. Invocação de Subagente por Task| ExecuteAgent[🛠️ Subagente: ng-sdd-execute]
+    ExecuteAgent -->|"5. Ciclo TDD (RED, GREEN, REFACTOR)"| Repo
+    ExecuteAgent -->|6. Commits Atômicos e Testes| Repo
+    ExecuteAgent -->|7. Hash do Commit e Status Final| Orchestrator
+    
+    classDef main fill:#4F46E5,color:#fff,stroke:#312E81,stroke-width:2px;
+    classDef sub fill:#10B981,color:#fff,stroke:#065F46,stroke-width:2px;
+    classDef user fill:#F59E0B,color:#fff,stroke:#78350F,stroke-width:2px;
+    classDef repo fill:#6B7280,color:#fff,stroke:#374151,stroke-width:2px;
+    
+    class User user;
+    class Orchestrator main;
+    class ResearchAgent,ExecuteAgent sub;
+    class Repo repo;
+```
 
 ## ⚡ Modo Adaptativo
 

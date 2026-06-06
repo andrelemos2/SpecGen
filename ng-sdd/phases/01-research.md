@@ -46,9 +46,12 @@ Faça as perguntas **em sequência**, não tudo de uma vez. Espere a resposta an
 
 ---
 
-## Passo 2 — Brownfield: Mapeamento de Blast Radius
+## Passo 2 — Brownfield: Mapeamento de Blast Radius (Delegação para Subagente)
 
-Para sistemas existentes, identifique e documente:
+**Orquestrador:** Neste passo, NÃO faça os comandos de `grep` e leitura de arquivos manualmente. 
+Invoque a skill subagente (ex: `/ng-sdd-research` ou ferramenta de subagente nativa) passando a descrição da feature. O subagente rodará em background, vasculhando a codebase, e retornará um relatório consolidado.
+
+Para sistemas existentes, o subagente deve identificar e documentar:
 
 ### Contratos Implícitos
 Interfaces ou comportamentos que outros módulos dependem sem documentação formal:
