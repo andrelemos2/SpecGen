@@ -25,12 +25,11 @@ Avalia desenhos de solução (draw.io) sob 5 pilares de risco para antecipar que
 As definições são agnósticas e escritas no padrão aberto de Agent Skills.
 
 ### 🪐 No Antigravity (Gemini)
-Para instalar localmente as skills no seu ambiente CLI:
+As skills no Antigravity operam a partir do diretório de configurações local. Para instalar todas as skills, basta clonar este repositório:
 ```bash
-npx agent-skills install -s ng-sdd
-npx agent-skills install -s system-design
-npx agent-skills install -s low-risk-questions
+git clone https://github.com/andrelemos2/agent-skills.git ~/.gemini/config/skills/
 ```
+*(Ou, se preferir instalar apenas uma skill específica, copie a pasta dela diretamente para dentro de `~/.gemini/config/skills/`)*
 
 ### 🤖 No Devin (Cognition)
 Copie o diretório da skill desejada para a pasta `.agents/skills/` do repositório do seu projeto:
