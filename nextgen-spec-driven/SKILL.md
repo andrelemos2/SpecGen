@@ -1,10 +1,10 @@
 ---
-name: nextgen-spec-driven
-description: A melhor metodologia Spec-Driven para desenvolvimento assistido por IA. Foco extremo em redução de tokens, aprendizado contínuo (auto-correção e sugestões de regras via PRs), arquitetura modular (Bounded Contexts) e paralelização de subagentes. Composta por 5 fases adaptativas: Especificar, Design, Tarefas, Executar e Refletir. Use sempre que iniciar projetos, criar funcionalidades complexas ou aplicar correções guiadas. Otimizada para não "poluir" o contexto.
+name: ng-sdd
+description: "A melhor metodologia Spec-Driven para desenvolvimento assistido por IA. Foco extremo em redução de tokens, aprendizado contínuo (auto-correção e sugestões de regras via PRs), arquitetura modular (Bounded Contexts) e paralelização de subagentes. Composta por 5 fases adaptativas: Especificar, Design, Tarefas, Executar e Refletir. Use sempre que iniciar projetos, criar funcionalidades complexas ou aplicar correções guiadas. Otimizada para não \"poluir\" o contexto."
 license: CC-BY-4.0
 metadata:
   author: Andre Lemos
-  version: 2.0.0
+  version: 1.0.0
 argument-hint: "[feature-name | codebase-mapping | bug-fix]"
 model: sonnet
 allowed-tools:
