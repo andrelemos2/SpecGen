@@ -6,22 +6,17 @@ Este repositório reúne um conjunto de **skills estruturadas** para otimizar o 
 
 ## 📁 Skills Disponíveis
 
-### 1. 🎯 [Spec-Driven (Desenvolvimento Guiado por Especificações)](file:///Users/andrelemos/.gemini/config/skills/spec-driven/SKILL.md)
-Pipeline adaptativo baseado em 4 fases (**Especificar → Design → Tarefas → Executar**) que se ajusta automaticamente ao tamanho da funcionalidade (Modo Rápido para bugs simples, fluxo completo para grandes features).
-- **Triggers:** "especificar funcionalidade", "inicializar projeto", "mapear base de código", "correção rápida", "retomar trabalho".
-- **Destaque:** Compatibilidade nativa e auto-detectada para uso com subagentes locais (Antigravity) e **Child Sessions** (Devin).
+### 1. ⚡ [Next Gen Spec-Driven Development (ng-sdd)](file:///Users/andrelemos/.gemini/config/skills/ng-sdd/README.md)
+O framework definitivo de governança, paralelismo e execução cirúrgica. Evolução máxima de frameworks baseados em especificação, com foco absoluto em economia de tokens (<1000 tokens de overhead) e "Zero Alucinação" através de um fluxo operado puramente por Slash Commands.
+- **Triggers:** `/ngsdd:init`, `/ngsdd:propose`, `/ngsdd:apply`, `/ngsdd:pause`, `/ngsdd:archive`.
 
-### 2. 🚀 [NextGen Spec-Driven (Alta Eficiência e Redução de Tokens)](file:///Users/andrelemos/.gemini/config/skills/nextgen-spec-driven/SKILL.md)
-A evolução suprema do Spec-Driven. Mantém as fases guiadas, mas com arquitetura baseada em **Bounded Contexts**, orçamentação extrema de contexto (redução radical de tokens) e um motor orgânico anti-alucinação de aprendizado contínuo focado em *PR Suggestions* ao invés de automação cega de logs. Ideal para orquestração limpa de subagentes paralelos.
-- **Triggers:** "especificar funcionalidade", "projetar", "criar tarefas", "implementar", "corrigir [feedback]".
-
-### 3. 🗺️ [Codebase Navigator (Exploração de Código)](file:///Users/andrelemos/.gemini/config/skills/codebase-navigator/SKILL.md)
-Guia metódico para decifrar bases de código complexas ou sem documentação, traçando investigações cirúrgicas e alimentando bases de conhecimento persistentes (`.notebook/`) de forma colaborativa com o desenvolvedor.
-- **Triggers:** "corrija isso", "como isso funciona", "investigue este fluxo", "ajude-me com este código".
-
-### 4. 📐 [System Design (Arquitetura de Sistemas)](file:///Users/andrelemos/.gemini/config/skills/system-design/SKILL.md)
+### 2. 📐 [System Design (Arquitetura de Sistemas)](file:///Users/andrelemos/.gemini/config/skills/system-design/SKILL.md)
 Framework completo para estruturar e desenhar a arquitetura de sistemas distribuídos, fornecendo guias para definição de escopo (FR/NFR), estimativas de capacidade, listagem de componentes AWS e geração de fluxogramas interativos.
 - **Triggers:** "desenho de arquitetura de system design", "projetar um sistema", "requisitos funcionais", "NFR", "SPOF", "trade-off", "diagrama de caixas e setas".
+
+### 3. 🛡️ [Low Risk Questions](file:///Users/andrelemos/.gemini/config/skills/low-risk-questions/SKILL.md)
+Avalia desenhos de solução (draw.io) sob 5 pilares de risco para antecipar questionamentos de Staff Engineers. Funciona como um gate de aprovação pré-review que identifica gaps em Aplicação, Testes, Observabilidade, Estratégia de Implantação e Dados.
+- **Triggers:** "avaliação de risco", "review de desenho de solução", "blast radius", "rollout seguro", "canary deployment", "checklist de deploy".
 
 ---
 
@@ -32,10 +27,9 @@ As definições são agnósticas e escritas no padrão aberto de Agent Skills.
 ### 🪐 No Antigravity (Gemini)
 Para instalar localmente as skills no seu ambiente CLI:
 ```bash
-npx agent-skills install -s spec-driven
-npx agent-skills install -s nextgen-spec-driven
-npx agent-skills install -s codebase-navigator
+npx agent-skills install -s ng-sdd
 npx agent-skills install -s system-design
+npx agent-skills install -s low-risk-questions
 ```
 
 ### 🤖 No Devin (Cognition)
@@ -44,10 +38,10 @@ Copie o diretório da skill desejada para a pasta `.agents/skills/` do repositó
 # Exemplo de estrutura no seu repositório de trabalho:
 .agents/
 └── skills/
-    ├── spec-driven/
+    ├── ng-sdd/
     │   ├── SKILL.md
-    │   └── references/
-    └── codebase-navigator/
+    │   └── README.md
+    └── system-design/
         └── SKILL.md
 ```
 O Devin detectará automaticamente as regras em tempo de execução e as carregará na lista de **Skills Discovered**.
