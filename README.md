@@ -11,11 +11,15 @@ Pipeline adaptativo baseado em 4 fases (**Especificar → Design → Tarefas →
 - **Triggers:** "especificar funcionalidade", "inicializar projeto", "mapear base de código", "correção rápida", "retomar trabalho".
 - **Destaque:** Compatibilidade nativa e auto-detectada para uso com subagentes locais (Antigravity) e **Child Sessions** (Devin).
 
-### 2. 🗺️ [Codebase Navigator (Exploração de Código)](file:///Users/andrelemos/.gemini/config/skills/codebase-navigator/SKILL.md)
+### 2. 🚀 [NextGen Spec-Driven (Alta Eficiência e Redução de Tokens)](file:///Users/andrelemos/.gemini/config/skills/nextgen-spec-driven/SKILL.md)
+A evolução suprema do Spec-Driven. Mantém as fases guiadas, mas com arquitetura baseada em **Bounded Contexts**, orçamentação extrema de contexto (redução radical de tokens) e um motor orgânico anti-alucinação de aprendizado contínuo focado em *PR Suggestions* ao invés de automação cega de logs. Ideal para orquestração limpa de subagentes paralelos.
+- **Triggers:** "especificar funcionalidade", "projetar", "criar tarefas", "implementar", "corrigir [feedback]".
+
+### 3. 🗺️ [Codebase Navigator (Exploração de Código)](file:///Users/andrelemos/.gemini/config/skills/codebase-navigator/SKILL.md)
 Guia metódico para decifrar bases de código complexas ou sem documentação, traçando investigações cirúrgicas e alimentando bases de conhecimento persistentes (`.notebook/`) de forma colaborativa com o desenvolvedor.
 - **Triggers:** "corrija isso", "como isso funciona", "investigue este fluxo", "ajude-me com este código".
 
-### 3. 📐 [System Design (Arquitetura de Sistemas)](file:///Users/andrelemos/.gemini/config/skills/system-design/SKILL.md)
+### 4. 📐 [System Design (Arquitetura de Sistemas)](file:///Users/andrelemos/.gemini/config/skills/system-design/SKILL.md)
 Framework completo para estruturar e desenhar a arquitetura de sistemas distribuídos, fornecendo guias para definição de escopo (FR/NFR), estimativas de capacidade, listagem de componentes AWS e geração de fluxogramas interativos.
 - **Triggers:** "desenho de arquitetura de system design", "projetar um sistema", "requisitos funcionais", "NFR", "SPOF", "trade-off", "diagrama de caixas e setas".
 
@@ -29,6 +33,7 @@ As definições são agnósticas e escritas no padrão aberto de Agent Skills.
 Para instalar localmente as skills no seu ambiente CLI:
 ```bash
 npx agent-skills install -s spec-driven
+npx agent-skills install -s nextgen-spec-driven
 npx agent-skills install -s codebase-navigator
 npx agent-skills install -s system-design
 ```
