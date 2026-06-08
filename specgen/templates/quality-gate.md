@@ -8,7 +8,6 @@
 # Quality Gate Report: [Feature Name]
 
 **ID:** FEAT-[NNN]
-**Branch:** feature/FEAT-[NNN]-[slug]
 **Data de revisão:** YYYY-MM-DD
 **Revisado por:** [Nome do Tech Lead]
 **Status:** ✅ APPROVED | ❌ FAILED | ⚠️ APPROVED WITH DEBT
@@ -54,17 +53,7 @@
 
 ---
 
-## 4. GitFlow
-
-| Item | Status |
-|------|--------|
-| Conventional Commits em todos os commits | ✅ / ❌ |
-| Branch em dia com develop (rebase feito) | ✅ / ❌ |
-| Nenhum commit direto em develop/main | ✅ / ❌ |
-
----
-
-## 5. Dívida Técnica Gerada
+## 4. Dívida Técnica Gerada
 
 > Liste qualquer dívida técnica **introduzida** por esta feature.
 > Dívida não registrada aqui não será endereçada no futuro.
@@ -75,7 +64,7 @@
 
 ---
 
-## 6. Observações e Decisões
+## 5. Observações e Decisões
 
 > Notas relevantes para o time. Decisões arquiteturais tomadas durante a execução.
 > Contexto importante para features futuras que dependem desta.
@@ -84,7 +73,7 @@
 
 ---
 
-## 7. Próximos Passos
+## 6. Próximos Passos
 
 > Features ou tasks que surgiram durante esta implementação e devem ser planejadas.
 

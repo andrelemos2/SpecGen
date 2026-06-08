@@ -1,15 +1,15 @@
 # Fase 6 — ARCHIVE: Quality Gate e Encerramento
 
 > **Owner:** Tech Lead da feature
-> **Comando:** `/ngsdd:archive`
+> **Comando:** `/specgen:archive`
 > **Sempre obrigatória** — Quick Path e Full Path.
 
 ---
 
 ## Objetivo
 
-Garantir que a feature está completa, conforme a spec, e fechar o ciclo no GitFlow.
-Nada vai para `develop` sem passar pelo Quality Gate.
+Garantir que a feature está completa, conforme a spec, e fechar o ciclo de desenvolvimento.
+Nada é concluído sem passar pelo Quality Gate.
 
 ---
 
@@ -33,10 +33,7 @@ Execute o checklist completo. **Qualquer item reprovado bloqueia o archive.**
 - [ ] O linter passa sem erros?
 - [ ] Não há `TODO` ou `FIXME` introduzidos pela feature?
 
-### GitFlow
-- [ ] Todos os commits usam Conventional Commits?
-- [ ] A branch está em dia com `develop` (rebase feito)?
-- [ ] O build/pipeline de CI passa?
+
 
 ---
 
@@ -85,32 +82,7 @@ Copie `templates/quality-gate.md` para `.sdd/specs/[slug]/quality-gate.md` e pre
 > [Notas relevantes para o time, decisões tomadas, contexto para próximas features]
 ```
 
----
 
-## Passo 3 — Feature Finish (GitFlow)
-
-```bash
-# Garanta que está na branch da feature
-git checkout feature/FEAT-NNN-[slug]
-
-# Merge da feature para develop via GitFlow
-git flow feature finish FEAT-NNN-[slug]
-
-# Isso automaticamente:
-# 1. Faz merge de feature/FEAT-NNN-[slug] → develop
-# 2. Deleta a branch de feature local
-# 3. Retorna para develop
-
-# Publique o develop atualizado
-git push origin develop
-
-# Limpe a branch remota se existir
-git push origin --delete feature/FEAT-NNN-[slug]
-```
-
-> **Para hotfixes (Quick Path com `git flow hotfix`):** use `git flow hotfix finish [slug]`.
-> Isso faz merge em `develop` E em `main`, e cria uma tag de versão automaticamente.
-> Leia `workflows/gitflow.md` para o fluxo completo de hotfix e release.
 
 ---
 
@@ -130,8 +102,6 @@ Adicione ao `.sdd/foundation/STATE.md`:
 ```markdown
 ## [YYYY-MM-DD] ✅ FEAT-[NNN]: [Feature Name] — CONCLUÍDA
 
-- **Branch:** feature/FEAT-NNN-[slug] → develop
-- **Merge:** YYYY-MM-DD
 - **Cobertura:** 87%
 - **Decisões tomadas:** [decisões arquiteturais relevantes para o futuro]
 - **Dívida técnica gerada:** [nenhuma | lista de itens]
@@ -146,12 +116,10 @@ Informe ao usuário:
 
 ```
 ✅ Feature [FEAT-NNN: nome] arquivada com sucesso.
-
-📦 Branch feature/FEAT-NNN-[slug] mergeada em develop e deletada.
 📁 Spec movida para .sdd/archive/[slug]/
 📋 STATE.md atualizado.
 
 Próximo comando disponível:
-  → /ngsdd:specify [próxima-feature]  (nova feature)
-  → /ngsdd:status                     (ver estado do projeto)
+  → /specgen:specify [próxima-feature]  (nova feature)
+  → /specgen:status                     (ver estado do projeto)
 ```

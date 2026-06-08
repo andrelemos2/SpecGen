@@ -1,4 +1,4 @@
-# Princípios Fundamentais do ng-sdd
+# Princípios Fundamentais do SpecGen
 
 > Este arquivo é imutável no dia-a-dia. Alterações requerem aprovação do Tech Lead.
 > Owner: Tech Lead / Principal Engineer.
@@ -64,5 +64,4 @@ O framework é projetado para **times**, não indivíduos.
 - `CONSTITUTION.md`: regras do time (todos respeitam)
 - Matriz de Sub-Agentes: define responsabilidades claras
 - Quality Gate: garante rastreabilidade e auditabilidade
-- GitFlow: garante fluxo de branches sem conflito
-- Arquivos separados por fase: evita conflitos de merge
+- Arquivos separados por fase: evita conflitos de código

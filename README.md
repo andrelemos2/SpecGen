@@ -6,9 +6,9 @@ Este repositório reúne um conjunto de **skills estruturadas** para otimizar o 
 
 ## 📁 Skills Disponíveis
 
-### 1. 📐 [Next Gen Spec-Driven Development (ng-sdd)](file:///Users/andrelemos/.gemini/config/skills/ng-sdd/SKILL.md)
+### 1. 📐 [Next Gen Spec-Driven Development (SpecGen)](file:///Users/andrelemos/.gemini/config/skills/SpecGen/SKILL.md)
 Framework enterprise de Spec-Driven Development (v2.1). Arquitetura modular com *lazy loading* de fases (15 arquivos estruturados), pipeline de 7 fases gated e **integração nativa com GitFlow**. Suporte a PRD, Greenfield/Brownfield, diagramas Mermaid, TDD, sub-agentes paralelos e **modo adaptativo** (Quick Path vs Full Path).
-- **Triggers:** `/ngsdd:init`, `/ngsdd:research`, `/ngsdd:specify`, `/ngsdd:design`, `/ngsdd:tasks`, `/ngsdd:execute`, `/ngsdd:archive`, `/ngsdd:status`.
+- **Triggers:** `/specgen:init`, `/specgen:research`, `/specgen:specify`, `/specgen:design`, `/specgen:tasks`, `/specgen:execute`, `/specgen:archive`, `/specgen:status`.
 
 ### 2. 📐 [System Design (Arquitetura de Sistemas)](file:///Users/andrelemos/.gemini/config/skills/system-design/SKILL.md)
 Framework completo para estruturar e desenhar a arquitetura de sistemas distribuídos, fornecendo guias para definição de escopo (FR/NFR), estimativas de capacidade, listagem de componentes AWS e geração de fluxogramas interativos.
@@ -41,7 +41,7 @@ Copie o diretório da skill desejada para a pasta `.agents/skills/` do repositó
 # Exemplo de estrutura no seu repositório de trabalho:
 .agents/
 └── skills/
-    ├── ng-sdd/
+    ├── SpecGen/
     │   ├── SKILL.md
     │   └── README.md
     └── system-design/

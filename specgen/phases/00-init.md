@@ -1,7 +1,7 @@
 # Fase 0 — INIT: Fundação do Projeto
 
 > **Owner:** Tech Lead / Staff Engineer
-> **Comando:** `/ngsdd:init`
+> **Comando:** `/specgen:init`
 > **Sempre obrigatória** — Quick Path e Full Path.
 
 ---
@@ -81,8 +81,7 @@ Regras globais do projeto. Exemplo:
 - CI/CD: GitHub Actions
 
 ## Convenções Obrigatórias
-- Commits: Conventional Commits (feat, fix, chore, docs, test, refactor)
-- Branches: GitFlow (feature/*, hotfix/*, release/*, develop, main)
+- Commits: Regras limpas de versionamento, a critério da equipe.
 - Cobertura mínima de testes: 80%
 - PRs: requerem ao menos 1 aprovação
 - Todas as APIs públicas devem ter contrato OpenAPI documentado
@@ -132,36 +131,12 @@ Copie de `templates/prd.md` e preencha com as informações elicitadas.
 
 ---
 
-## Passo 4 — Inicializar GitFlow
-
-```bash
-# Instalar git-flow se não existir
-brew install git-flow-avh   # macOS
-apt-get install git-flow    # Linux
-
-# Inicializar no repositório
-git flow init
-
-# Configuração recomendada (Enter em todas as perguntas padrão):
-# Branch de produção: main
-# Branch de desenvolvimento: develop
-# Prefixo de features: feature/
-# Prefixo de releases: release/
-# Prefixo de hotfixes: hotfix/
-# Prefixo de support: support/
-# Tag prefix: v
-```
-
-Para detalhes completos da integração GitFlow, leia `workflows/gitflow.md`.
-
----
-
-## Passo 5 — Apresentar Resumo
+## Passo 4 — Apresentar Resumo
 
 Apresente ao usuário:
 - Contexto detectado (Greenfield/Brownfield)
 - Stack identificada ou definida
 - Artefatos criados
-- Próximo passo sugerido (`/ngsdd:specify [nome-da-feature]` ou `/ngsdd:research`)
+- Próximo passo sugerido (`/specgen:specify [nome-da-feature]` ou `/specgen:research`)
 
 Aguarde confirmação antes de avançar.

@@ -1,7 +1,7 @@
 # Fase 3 — DESIGN: Arquitetura e Contratos
 
 > **Owner:** Tech Lead / Arquiteto de Software
-> **Comando:** `/ngsdd:design`
+> **Comando:** `/specgen:design`
 > **Opcional no Quick Path** — Obrigatória no Full Path.
 
 ---

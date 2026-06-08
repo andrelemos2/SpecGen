@@ -1,7 +1,7 @@
 # Fase 1 — RESEARCH: Elicitação e Contexto
 
 > **Owner:** Tech Lead / Engenheiro Sênior responsável pela feature
-> **Comando:** `/ngsdd:research`
+> **Comando:** `/specgen:research`
 > **Opcional no Quick Path** — Obrigatória no Full Path.
 
 ---
@@ -49,7 +49,7 @@ Faça as perguntas **em sequência**, não tudo de uma vez. Espere a resposta an
 ## Passo 2 — Brownfield: Mapeamento de Blast Radius (Delegação para Subagente)
 
 **Orquestrador:** Neste passo, NÃO faça os comandos de `grep` e leitura de arquivos manualmente. 
-Invoque a skill subagente (ex: `/ng-sdd-research` ou ferramenta de subagente nativa) passando a descrição da feature. O subagente rodará em background, vasculhando a codebase, e retornará um relatório consolidado.
+Invoque a skill subagente (ex: `/specgen-research` ou ferramenta de subagente nativa) passando a descrição da feature. O subagente rodará em background, vasculhando a codebase, e retornará um relatório consolidado.
 
 Para sistemas existentes, o subagente deve identificar e documentar:
 
@@ -138,5 +138,5 @@ Apresente os findings ao usuário com um resumo:
 - Contratos implícitos encontrados (N)
 - Perguntas ainda em aberto
 
-> Aguarde aprovação explícita antes de avançar para `/ngsdd:specify`.
+> Aguarde aprovação explícita antes de avançar para `/specgen:specify`.
 > Se houver perguntas em aberto críticas, NÃO avance — resolva primeiro.

@@ -1,7 +1,7 @@
 # Fase 2 — SPECIFY: Especificação (Source of Truth)
 
 > **Owner:** Product Engineer / Tech Lead da feature
-> **Comando:** `/ngsdd:specify [feature-slug]`
+> **Comando:** `/specgen:specify [feature-slug]`
 > **Sempre obrigatória** — Quick Path e Full Path.
 
 ---
@@ -19,12 +19,7 @@ A spec aprovada é a única fonte da verdade — nenhuma implementação pode ir
 mkdir -p .sdd/specs/[feature-slug]
 ```
 
-> **GitFlow:** Antes de criar a spec, inicie a branch da feature:
-> ```bash
-> git flow feature start FEAT-[NNN]-[feature-slug]
-> # Exemplo: git flow feature start FEAT-001-user-authentication
-> ```
-> Todo o trabalho desta feature acontecerá nessa branch.
+
 
 ---
 
@@ -42,7 +37,6 @@ Salve em `.sdd/specs/[feature-slug]/spec.md`.
 **Slug:** [feature-slug]
 **Tipo:** Feature | Bugfix | Refactor | Spike
 **Path:** Full Path | Quick Path
-**Branch:** feature/FEAT-[NNN]-[feature-slug]
 **Data:** YYYY-MM-DD
 **Status:** DRAFT
 ```

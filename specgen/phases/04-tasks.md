@@ -1,7 +1,7 @@
 # Fase 4 — TASKS: Decomposição Atômica
 
 > **Owner:** Tech Lead / Engenheiro responsável pela feature
-> **Comando:** `/ngsdd:tasks`
+> **Comando:** `/specgen:tasks`
 > **Opcional no Quick Path** — Obrigatória no Full Path.
 
 ---
@@ -119,4 +119,4 @@ Analise o `delta.md` e classifique cada tarefa:
 > - [ ] Todos os cenários BDD do `spec.md` têm uma tarefa de teste correspondente?
 >
 > Após aprovação, atualize status da spec para `EXECUTING`.
-> Inicie a execução com `/ngsdd:execute`.
+> Inicie a execução com `/specgen:execute`.
